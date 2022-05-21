@@ -1,0 +1,30 @@
+<h3 class="text-center m-3">SignUp Form</h3>
+<form>
+    <div class="container row">
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input required ngModel name="email" #email="ngModel" type="email" class="form-control" id="email" placeholder="Email">
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is Required.</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password">Password</label>
+        <input required ngModel name="password" #password="ngModel" type="password" class="form-control" id="password" placeholder="Password">
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Password is Required.</div>
+      </div>
+    </div>
+    <div class="container row py-3">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input required ngModel name="city" #city="ngModel" type="text" class="form-control" placeholder="Enter City" id="inputCity">
+        <div class="alert alert-danger" *ngIf="city.touched && !city.valid">City is Required.</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputState">State</label>
+        <input required ngModel name="state" #state="ngModel" type="text" class="form-control" placeholder="Enter State" id="inputState">
+        <div class="alert alert-danger" *ngIf="state.touched && !state.valid">State is Required.</div>
+      </div>
+    </div>
+    <div class="text-center p-3 container">
+        <button (click)="addUser(email.value, password.value, city.value, state.value)" class="btn btn-dark">Register</button>
+    </div>
+</form>
