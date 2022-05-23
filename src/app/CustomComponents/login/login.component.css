@@ -1,1 +1,9 @@
-
+.nothing {
+  background-image: url("../../../assets/images/login.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: 60%;
+}
+.whitebg {
+  background-color: white;
+}

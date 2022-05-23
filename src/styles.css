@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.alert-danger {
+  height: 40px;
+}
+.alert {
+  padding: 1.5%;
+  margin: 0%;
+}

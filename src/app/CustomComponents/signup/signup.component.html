@@ -1,30 +1,108 @@
-<h3 class="text-center m-3">SignUp Form</h3>
-<form>
-    <div class="container row">
+<form class="text-white" (ngSubmit)="addUser(firstName.value, lastName.value, dob.value, age.value, mobile.value, vaccineName.value, vaccineNumber.value, dov.value, email.value, password.value, aadharNumber.value)">
+
+  <h3 class="container text-center py-3">SignUp Form</h3>
+  
+  <div class="container row">
+
+    <div class="form-group col-md-6">
+      <label for="firstName">First Name</label>
+      <input required ngModel name="firstName" #firstName="ngModel" type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+      <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">First Name is Required.</div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="lastName">Last Name</label>
+      <input required ngModel name="lastName" #lastName="ngModel" type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+      <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">Last Name is Required.</div>
+    </div>
+
+  </div>
+  
+  <div class="container row">
+
+    <div class="form-group col-md-6">
+      <label for="dob">Date of Birth</label>
+      <input required ngModel name="dob" #dob="ngModel" type="date" class="form-control" id="dob" placeholder="Enter Date of Birth">
+      <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">Date of Birth is Required.</div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="age">Age</label>
+      <input required ngModel name="age" #age="ngModel" type="number" class="form-control" id="age" placeholder="Enter Age">
+      <div class="alert alert-danger" *ngIf="age.touched && !age.valid">Age is Required.</div>
+    </div>
+
+  </div>
+
+  
+  <div class="container row">
+
+    <div class="form-group col-md-6">
+      <label for="mobile">Mobile Number</label>
+      <input required ngModel name="mobile" #mobile="ngModel" type="number" class="form-control" id="mobile" placeholder="Enter Mobile Number">
+      <div class="alert alert-danger" *ngIf="mobile.touched && !mobile.valid">Mobile Number is Required.</div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="vaccineName">Vaccine Name</label>
+      <input required ngModel name="vaccineName" #vaccineName="ngModel" type="text" class="form-control" id="vaccineName" placeholder="Enter Vaccine Name">
+      <div class="alert alert-danger" *ngIf="vaccineName.touched && !vaccineName.valid">Vaccine Name is Required.</div>
+    </div>
+
+  </div>
+
+  
+  <div class="container row">
+
+    <div class="form-group col-md-6">
+      <label for="vaccineNumber">Vaccine Number</label>
+      <select ngModel name="vaccineNumber" #vaccineNumber="ngModel" class="form-control" id="vaccineNumber">
+        <option value="one">1</option>
+        <option value="two">2</option>
+      </select> 
+      <div class="alert alert-danger" *ngIf="vaccineNumber.touched && !vaccineNumber.valid">Vaccine Number is Required.</div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="dov">Date of Vaccine</label>
+      <input required ngModel name="dov" #dov="ngModel" type="date" class="form-control" id="dov" placeholder="Enter Date of Vaccine">
+      <div class="alert alert-danger" *ngIf="dov.touched && !dov.valid">Date of Vaccine is Required.</div>
+    </div>
+
+  </div>
+  
+
+  <div class="container row py-3">
+
       <div class="form-group col-md-6">
         <label for="email">Email</label>
         <input required ngModel name="email" #email="ngModel" type="email" class="form-control" id="email" placeholder="Email">
         <div class="alert alert-danger" *ngIf="email.touched && !email.valid">Email is Required.</div>
       </div>
+
       <div class="form-group col-md-6">
         <label for="password">Password</label>
         <input required ngModel name="password" #password="ngModel" type="password" class="form-control" id="password" placeholder="Password">
         <div class="alert alert-danger" *ngIf="password.touched && !password.valid">Password is Required.</div>
       </div>
+
     </div>
-    <div class="container row py-3">
-      <div class="form-group col-md-6">
-        <label for="inputCity">City</label>
-        <input required ngModel name="city" #city="ngModel" type="text" class="form-control" placeholder="Enter City" id="inputCity">
-        <div class="alert alert-danger" *ngIf="city.touched && !city.valid">City is Required.</div>
+
+
+    <div class="container row">
+
+      <div class="form-group">
+        <label for="aadharNumber">Aadhar Number</label>
+        <input required ngModel name="aadharNumber" #aadharNumber="ngModel" type="number" class="form-control" placeholder="Enter Aadhar Number" id="aadharNumber">
+        <div class="alert alert-danger" *ngIf="aadharNumber.touched && !aadharNumber.valid">Aadhar Number is Required.</div>
       </div>
-      <div class="form-group col-md-6">
-        <label for="inputState">State</label>
-        <input required ngModel name="state" #state="ngModel" type="text" class="form-control" placeholder="Enter State" id="inputState">
-        <div class="alert alert-danger" *ngIf="state.touched && !state.valid">State is Required.</div>
-      </div>
+
     </div>
-    <div class="text-center p-3 container">
-        <button (click)="addUser(email.value, password.value, city.value, state.value)" class="btn btn-dark">Register</button>
+
+
+    <div class="container text-center py-3">
+        <button type="submit" class="btn btn-dark">Register</button>
     </div>
+
+
 </form>

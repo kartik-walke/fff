@@ -18,8 +18,11 @@ export class SignupComponent implements OnInit {
     console.log(this.userService.getUsers());
   }
 
-  addUser(email:String, password:String, city:String, state:String) {
-    var newUser = new User(email, password, city, state);
+  addUser(firstName:String, lastName:String, dob:Date, age:number, mobile:number, vaccineName:String, vaccineNumber:String, dov:Date,email:String, password:String, aadharNumber:number) {
+    var vacNo = 0;
+    if(vaccineNumber == "one") vacNo = 1;
+    else vacNo = 2;
+    var newUser = new User(firstName, lastName, dob.toString(), age, mobile, vaccineName, vacNo, dov.toString(), email, password, aadharNumber);
     this.userService.addUser(newUser);
     alert("User Added Successfully...");
     this.router.navigate(['userList']);
